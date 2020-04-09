@@ -22,7 +22,7 @@ class App extends React.Component {
   componentDidMount() {
     console.log("didMount");
     fetch(`${API_URL}/discover/movie?api_key=${API_KEY_3}`).then((data) => {
-      console.log("then", data);
+      console.log("then", data.json);
     });
     console.log("after fetch");
   }
