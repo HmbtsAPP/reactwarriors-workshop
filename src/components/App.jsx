@@ -28,6 +28,9 @@ class App extends React.Component {
       })
       .then((data) => {
         console.log("data", data);
+        this.setState({
+          movies: data.results
+        })
       });
     console.log("after fetch");
   }
