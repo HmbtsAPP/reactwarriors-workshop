@@ -21,7 +21,9 @@ class App extends React.Component {
 
   componentDidMount() {
     console.log("didMount");
-    fetch(`${API_URL}/discover/movie?api_key=${API_KEY_3}`)
+    fetch(
+      `${API_URL}/discover/movie?api_key=${API_KEY_3}&sort_by=popularity.asc`
+    )
       .then((response) => {
         console.log("then");
         return response.json();
@@ -29,8 +31,8 @@ class App extends React.Component {
       .then((data) => {
         console.log("data", data);
         this.setState({
-          movies: data.results
-        })
+          movies: data.results,
+        });
       });
     console.log("after fetch");
   }
