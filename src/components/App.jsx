@@ -24,7 +24,7 @@ class App extends React.Component {
     fetch(`${API_URL}/discover/movie?api_key=${API_KEY_3}`)
       .then((response) => {
         console.log("then");
-        response.json();
+        return response.json();
       })
       .then((data) => {
         console.log("data", data);
