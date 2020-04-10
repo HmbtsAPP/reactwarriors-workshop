@@ -3,16 +3,15 @@ import React from "react";
 const MovieTabs = (props) => {
   const { sort_by, updateSortBy } = props;
 
-//   const handleClick = (value) => {
-//       return (event) => {
-//     updateSortBy(value);
-//   };}
+  //   const handleClick = (value) => {
+  //       return (event) => {
+  //     updateSortBy(value);
+  //   };}
 
   const handleClick = (value) => () => {
-      updateSortBy(value);
-    };
+    updateSortBy(value);
   };
-  
+
   return (
     <ul className="tabs nav nav-pills">
       <li className="nav-item">
@@ -21,6 +20,9 @@ const MovieTabs = (props) => {
             sort_by === "popularity.desc" ? "active" : ""
           }`}
           onClick={handleClick("popularity.desc")}
+          // (event) => {
+          //     updateSortBy("popularity.desc")
+          // }
         >
           Popularity desc
         </div>
