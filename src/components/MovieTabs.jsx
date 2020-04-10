@@ -13,10 +13,22 @@ const MovieTabs = (props) => {
         </div>
       </li>
       <li className="nav-item">
-        <div className="nav-link">Revenue desc</div>
+        <div
+          className={`nav-link ${
+            props.sort_by === "revenue.desc" ? "active" : ""
+          }`}
+        >
+          Revenue desc
+        </div>
       </li>
       <li className="nav-item">
-        <div className="nav-link">Vote average desc</div>
+        <div
+          cclassName={`nav-link ${
+            props.sort_by === "vote_average.desc" ? "active" : ""
+          }`}
+        >
+          Vote average desc
+        </div>
       </li>
     </ul>
   );
