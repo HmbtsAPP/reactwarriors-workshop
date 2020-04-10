@@ -1,9 +1,7 @@
 import React from "react";
 
 const MovieTabs = () => {
-    return (
+  return <div></div>;
+};
 
-    )
-}
-
-export default MovieTabs
+export default MovieTabs;
