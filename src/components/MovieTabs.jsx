@@ -28,7 +28,7 @@ const MovieTabs = (props) => {
       </li>
       <li className="nav-item">
         <div
-          cclassName={`nav-link ${
+          className={`nav-link ${
             sort_by === "vote_average.desc" ? "active" : ""
           }`}
           onClick={() => {
