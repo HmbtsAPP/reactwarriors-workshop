@@ -15,6 +15,7 @@ class App extends React.Component {
     this.state = {
       movies: [],
       moviesWillWatch: [],
+      sort_by: "popularity.desc",
     };
 
     console.log("constructor");
@@ -23,7 +24,7 @@ class App extends React.Component {
   componentDidMount() {
     console.log("didMount");
     fetch(
-      `${API_URL}/discover/movie?api_key=${API_KEY_3}&sort_by=popularity.desc`
+      `${API_URL}/discover/movie?api_key=${API_KEY_3}&sort_by=${this.state.sort_by}`
     )
       .then((response) => {
         console.log("then");
