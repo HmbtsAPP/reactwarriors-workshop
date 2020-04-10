@@ -77,7 +77,9 @@ class App extends React.Component {
         <div className="row mt-4">
           <div className="col-9">
             <div className="row">
-              <MovieTabs />
+            <MovieTabs />
+            </div>
+            <div className="row">
               {this.state.movies.map((movie) => {
                 return (
                   <div className="col-6 mb-4" key={movie.id}>
