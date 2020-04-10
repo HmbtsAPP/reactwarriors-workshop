@@ -1,7 +1,7 @@
 import React from "react";
 
 const MovieTabs = (props) => {
-  const { sort_by } = props;
+  const { sort_by, updateSortBy } = props;
   return (
     <ul className="tabs nav nav-pills">
       <li className="nav-item">
