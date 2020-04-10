@@ -9,6 +9,9 @@ const MovieTabs = (props) => {
           className={`nav-link ${
             sort_by === "popularity.desc" ? "active" : ""
           }`}
+          onClick={() => {
+            updateSortBy("popularity.desc");
+          }}
         >
           Popularity desc
         </div>
@@ -16,6 +19,9 @@ const MovieTabs = (props) => {
       <li className="nav-item">
         <div
           className={`nav-link ${sort_by === "revenue.desc" ? "active" : ""}`}
+          onClick={() => {
+            updateSortBy("revenue.desc");
+          }}
         >
           Revenue desc
         </div>
@@ -25,6 +31,9 @@ const MovieTabs = (props) => {
           cclassName={`nav-link ${
             sort_by === "vote_average.desc" ? "active" : ""
           }`}
+          onClick={() => {
+            updateSortBy("popularity.desc");
+          }}
         >
           Vote average desc
         </div>
