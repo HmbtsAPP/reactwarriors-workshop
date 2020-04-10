@@ -2,10 +2,17 @@ import React from "react";
 
 const MovieTabs = (props) => {
   const { sort_by, updateSortBy } = props;
+
+//   const handleClick = (value) => {
+//       return (event) => {
+//     updateSortBy(value);
+//   };}
+
   const handleClick = (value) => () => {
       updateSortBy(value);
     };
   };
+  
   return (
     <ul className="tabs nav nav-pills">
       <li className="nav-item">
