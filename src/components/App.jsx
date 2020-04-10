@@ -76,7 +76,7 @@ class App extends React.Component {
       <div className="container">
         <div className="row mt-4">
           <div className="col-9">
-            <div className="row">
+            <div className="row mb-4">
               <div className="col-12">
                 <MovieTabs />
               </div>
