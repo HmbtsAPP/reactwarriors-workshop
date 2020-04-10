@@ -32,7 +32,7 @@ const MovieTabs = (props) => {
             sort_by === "vote_average.desc" ? "active" : ""
           }`}
           onClick={() => {
-            updateSortBy("popularity.desc");
+            updateSortBy("vote_average.desc");
           }}
         >
           Vote average desc
