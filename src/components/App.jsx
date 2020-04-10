@@ -22,7 +22,7 @@ class App extends React.Component {
   componentDidMount() {
     console.log("didMount");
     fetch(
-      `${API_URL}/discover/movie?api_key=${API_KEY_3}&sort_by=popularity.asc`
+      `${API_URL}/discover/movie?api_key=${API_KEY_3}&sort_by=popularity.desc`
     )
       .then((response) => {
         console.log("then");
@@ -76,6 +76,7 @@ class App extends React.Component {
         <div className="row mt-4">
           <div className="col-9">
             <div className="row">
+              <MovieTabs />
               {this.state.movies.map((movie) => {
                 return (
                   <div className="col-6 mb-4" key={movie.id}>
