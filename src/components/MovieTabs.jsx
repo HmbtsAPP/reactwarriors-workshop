@@ -1,7 +1,19 @@
 import React from "react";
 
 const MovieTabs = () => {
-  return <div></div>;
+  return (
+    <ul className="tabs nav nav-pills">
+      <li className="nav-item">
+        <div className="nav-link active">Now playing</div>
+      </li>
+      <li className="nav-item">
+        <div className="nav-link">Upcoming</div>
+      </li>
+      <li className="nav-item">
+        <div className="nav-link">Popular</div>
+      </li>
+    </ul>
+  );
 };
 
 export default MovieTabs;
