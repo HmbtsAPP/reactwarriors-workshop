@@ -1,12 +1,13 @@
 import React from "react";
 
 const MovieTabs = (props) => {
+  const { sort_by } = props;
   return (
     <ul className="tabs nav nav-pills">
       <li className="nav-item">
         <div
           className={`nav-link ${
-            props.sort_by === "popularity.desc" ? "active" : ""
+            sort_by === "popularity.desc" ? "active" : ""
           }`}
         >
           Popularity desc
@@ -14,9 +15,7 @@ const MovieTabs = (props) => {
       </li>
       <li className="nav-item">
         <div
-          className={`nav-link ${
-            props.sort_by === "revenue.desc" ? "active" : ""
-          }`}
+          className={`nav-link ${sort_by === "revenue.desc" ? "active" : ""}`}
         >
           Revenue desc
         </div>
@@ -24,7 +23,7 @@ const MovieTabs = (props) => {
       <li className="nav-item">
         <div
           cclassName={`nav-link ${
-            props.sort_by === "vote_average.desc" ? "active" : ""
+            sort_by === "vote_average.desc" ? "active" : ""
           }`}
         >
           Vote average desc
