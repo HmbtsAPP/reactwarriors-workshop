@@ -4,7 +4,13 @@ const MovieTabs = (props) => {
   return (
     <ul className="tabs nav nav-pills">
       <li className="nav-item">
-        <div className="nav-link active">Popularity desc</div>
+        <div
+          className={`nav-link ${
+            props.sort_by === "popularity.desc" ? "active" : ""
+          }`}
+        >
+          Popularity desc
+        </div>
       </li>
       <li className="nav-item">
         <div className="nav-link">Revenue desc</div>
