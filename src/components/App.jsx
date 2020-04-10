@@ -71,6 +71,11 @@ class App extends React.Component {
     });
   };
 
+  updateSortBy = (value) => {
+    this.setState({
+      sort_by: value,
+    });
+  };
   render() {
     console.log("render", this);
     return (
@@ -79,7 +84,10 @@ class App extends React.Component {
           <div className="col-9">
             <div className="row mb-4">
               <div className="col-12">
-                <MovieTabs sort_by={this.state.sort_by} />
+                <MovieTabs
+                  sort_by={this.state.sort_by}
+                  updateSortBy={updateSortBy}
+                />
               </div>
             </div>
             <div className="row">
