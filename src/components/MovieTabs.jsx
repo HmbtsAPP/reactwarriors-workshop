@@ -4,13 +4,19 @@ const MovieTabs = () => {
   return (
     <ul className="tabs nav nav-pills">
       <li className="nav-item">
-        <div className="nav-link active">Now playing</div>
+        <div className="nav-link active">
+            Popularity desc
+            </div>
       </li>
       <li className="nav-item">
-        <div className="nav-link">Upcoming</div>
+        <div className="nav-link">
+            Revenue desc
+            </div>
       </li>
       <li className="nav-item">
-        <div className="nav-link">Popular</div>
+        <div className="nav-link">
+            Vote average desc
+            </div>
       </li>
     </ul>
   );
