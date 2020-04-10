@@ -2,8 +2,7 @@ import React from "react";
 
 const MovieTabs = (props) => {
   const { sort_by, updateSortBy } = props;
-  const handleClick = (value) => {
-    return (event) => {
+  const handleClick = (value) => () => {
       updateSortBy(value);
     };
   };
