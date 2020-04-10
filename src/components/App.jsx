@@ -79,7 +79,7 @@ class App extends React.Component {
           <div className="col-9">
             <div className="row mb-4">
               <div className="col-12">
-                <MovieTabs />
+                <MovieTabs sort_by={this.state.sort_by} />
               </div>
             </div>
             <div className="row">
