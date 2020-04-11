@@ -77,7 +77,7 @@ class App extends React.Component {
     });
   };
   render() {
-    console.log("render", this);
+    console.log("render", this.state.sort_by);
     return (
       <div className="container">
         <div className="row mt-4">
