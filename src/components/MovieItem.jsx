@@ -2,23 +2,28 @@ import React from "react";
 
 class MovieItem extends React.Component {
   state = {
-    willWatch: false
+    willWatch: false,
   };
+
+  componentWillUnmount() {
+    console.log("unmount", this.props.data.title);
+  }
 
   render() {
     const {
       data,
       deleteMovie,
       addMovieToWillWatch,
-      deleteMovieFromWillWatch
+      deleteMovieFromWillWatch,
     } = this.props;
     // props.data = {};
     return (
       <div className="card">
         <img
           className="card-img-top"
-          src={`https://image.tmdb.org/t/p/w500${data.backdrop_path ||
-            data.poster_path}`}
+          src={`https://image.tmdb.org/t/p/w500${
+            data.backdrop_path || data.poster_path
+          }`}
           alt=""
         />
         <div className="card-body">
@@ -31,7 +36,7 @@ class MovieItem extends React.Component {
                 className="btn btn-success"
                 onClick={() => {
                   this.setState({
-                    willWatch: false
+                    willWatch: false,
                   });
                   deleteMovieFromWillWatch(data);
                 }}
@@ -39,19 +44,19 @@ class MovieItem extends React.Component {
                 Will Watch
               </button>
             ) : (
-                <button
-                  type="button"
-                  className="btn btn-secondary"
-                  onClick={() => {
-                    this.setState({
-                      willWatch: true
-                    });
-                    addMovieToWillWatch(data);
-                  }}
-                >
-                  Will Watch
+              <button
+                type="button"
+                className="btn btn-secondary"
+                onClick={() => {
+                  this.setState({
+                    willWatch: true,
+                  });
+                  addMovieToWillWatch(data);
+                }}
+              >
+                Will Watch
               </button>
-              )}
+            )}
           </div>
           <button
             type="button"
