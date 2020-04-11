@@ -43,6 +43,9 @@ class App extends React.Component {
     console.log("didUpdate");
     console.log("prev", prevProps, prevState);
     console.log("this", this.props, this.state);
+    if (prevState.sort_by !== this.state.sort_by) {
+      console.log("call api")
+    }
   }
 
   deleteMovie = (movie) => {
