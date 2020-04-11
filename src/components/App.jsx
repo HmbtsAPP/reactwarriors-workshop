@@ -39,6 +39,12 @@ class App extends React.Component {
     console.log("after fetch");
   }
 
+  componentDidUpdate(prevProps, prevState) {
+    console.log("didUpdate");
+    console.log("prev", prevProps, prevState);
+    console.log("this", this.props, this.state);
+  }
+
   deleteMovie = (movie) => {
     console.log(movie.id);
     const updateMovies = this.state.movies.filter(
