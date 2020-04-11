@@ -44,7 +44,20 @@ class App extends React.Component {
     console.log("prev", prevProps, prevState);
     console.log("this", this.props, this.state);
     if (prevState.sort_by !== this.state.sort_by) {
-      console.log("call api")
+      console.log("call api");
+      fetch(
+        `${API_URL}/discover/movie?api_key=${API_KEY_3}&sort_by=${this.state.sort_by}`
+      )
+        .then((response) => {
+          console.log("then");
+          return response.json();
+        })
+        .then((data) => {
+          console.log("data", data);
+          this.setState({
+            movies: data.results,
+          });
+        });
     }
   }
 
