@@ -35,14 +35,23 @@ class App extends React.Component {
     console.log("prev", prevProps, prevState);
     console.log("this", this.props, this.state);
     if (prevState.sort_by !== this.state.sort_by) {
-      console.log("call api");
+      console.log("call api update sort_by");
+      this.setState({
+        page: 1,
+      });
       this.getMovies();
+    } else {
+      if (prevState.page !== this.state.page) {
+        console.log("call api update page");
+        this.getMovies();
+      }
     }
   }
 
   getMovies = () => {
+    console.log("fetch page", this.state.page);
     fetch(
-      `${API_URL}/discover/movie?api_key=${API_KEY_3}&sort_by=${this.state.sort_by}`
+      `${API_URL}/discover/movie?api_key=${API_KEY_3}&language=en-US&sort_by=${this.state.sort_by}&include_adult=false&include_video=false&page=${this.state.page}`
     )
       .then((response) => {
         console.log("then", this);
@@ -52,7 +61,6 @@ class App extends React.Component {
         console.log("data", data);
         this.setState({
           movies: data.results,
-          page: data.page,
           total_pages: data.total_pages,
         });
       });
@@ -96,9 +104,9 @@ class App extends React.Component {
     });
   };
 
-  updatePage = (value) => {
+  updatePage = (value_page) => {
     this.setState({
-      page: value,
+      page: value_page,
     });
   };
 
@@ -148,6 +156,17 @@ class App extends React.Component {
                 </li>
               ))}
             </ul>
+          </div>
+        </div>
+        <div className="row mt-4">
+          <div className="col-lg-9">
+            <div className="mb-4">
+              <MoviePages
+                page={this.state.page}
+                total_pages={this.state.total_pages}
+                updatePage={this.updatePage}
+              />
+            </div>
           </div>
         </div>
       </div>

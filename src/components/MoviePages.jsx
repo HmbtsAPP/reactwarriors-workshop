@@ -1,17 +1,25 @@
 import React from "react";
 
 class MoviePages extends React.Component {
+    
+    // shouldComponentUpdate(nextProps, nextState) {
+    //   if (nextProps.page !== this.props.page) {
+    //     return true;
+    //   } else {
+    //     return false;
+    //   }
+    // }
+
   render() {
     const { page, total_pages, updatePage } = this.props;
     console.log("MoviePages pages data", page, total_pages);
 
-    const handleClick = (value) => () => {
-      if (value <= total_pages && value >= 1 && value !== page) {
-        updatePage(value);
-        console.log("update Page", value);
+    const handleClick = (value_page) => () => {
+      if (value_page <= total_pages && value_page >= 1 && value_page !== page) {
+        updatePage(value_page);
+        console.log("update Page", value_page);
       }
     };
-
     return (
       <div className="d-flex justify-content-between">
         <button
