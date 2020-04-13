@@ -9,8 +9,7 @@
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-scripts": "^3.0.1",
-    "classnames": "^2.2.4",
-    "gh-pages": "2.2.0"
+    "classnames": "^2.2.4"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -32,5 +31,8 @@
       "last 1 safari version"
     ]
   },
-  "homepage": "http://HmbtsAPP.github.io/reactwarriors-master-class"
+  "homepage": "http://HmbtsAPP.github.io/reactwarriors-master-class",
+  "devDependencies": {
+    "gh-pages": "^2.2.0"
+  }
 }
