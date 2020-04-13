@@ -6,6 +6,11 @@ class MovieTabs extends React.Component {
     console.log("nextProps sort_by", nextProps.sort_by);
     console.log("prevProps sort_by", this.props.sort_by);
   }
+
+  shouldComponentUpdate(nextProps, nextState) {
+    return false;
+  }
+
   render() {
     const { sort_by, updateSortBy } = this.props;
 
