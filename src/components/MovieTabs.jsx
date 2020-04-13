@@ -1,5 +1,5 @@
 import React from "react";
-import classnames from "classnames";
+import classNames from "classnames";
 
 class MovieTabs extends React.Component {
   // componentWillReceiveProps(nextProps, nextState) {
