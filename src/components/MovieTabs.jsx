@@ -29,8 +29,11 @@ class MovieTabs extends React.Component {
     };
 
     const getClassLink = (value) => {
-      return `nav-link ${sort_by === value ? "active" : ""}`;
+      return classNames("nav-link", { active: sort_by === value });
     };
+    // const getClassLink = (value) => {
+    //   return `nav-link ${sort_by === value ? "active" : ""}`;
+    // };
 
     return (
       <ul className="tabs nav nav-pills">
