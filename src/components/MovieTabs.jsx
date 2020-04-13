@@ -1,7 +1,8 @@
 import React from "react";
 
-const MovieTabs = (props) => {
-  const { sort_by, updateSortBy } = props;
+class MovieTabs extends React.Component {
+  render() {
+    const { sort_by, updateSortBy } = this.props;
 
   //   const handleClick = (value) => {
   //       return (event) => {
@@ -50,6 +51,10 @@ const MovieTabs = (props) => {
       </li>
     </ul>
   );
-};
+  }
+}
+// const MovieTabs = (props) => {
+  
+// };
 
 export default MovieTabs;

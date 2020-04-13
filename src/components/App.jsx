@@ -42,7 +42,7 @@ class App extends React.Component {
       `${API_URL}/discover/movie?api_key=${API_KEY_3}&sort_by=${this.state.sort_by}`
     )
       .then((response) => {
-        console.log("then");
+        console.log("then", this);
         return response.json();
       })
       .then((data) => {
