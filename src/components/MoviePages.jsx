@@ -2,7 +2,13 @@ import React from "react";
 
 class MoviePages extends React.Component {
   render() {
-    return <div>Page 1</div>;
+    const { page, total_pages } = this.props;
+    console.log("MoviePages pages data", page, total_pages);
+    return (
+      <div>
+        Page {page} of {total_pages}
+      </div>
+    );
   }
 }
 

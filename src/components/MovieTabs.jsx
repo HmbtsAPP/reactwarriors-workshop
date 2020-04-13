@@ -1,11 +1,11 @@
 import React from "react";
 
 class MovieTabs extends React.Component {
-  componentWillReceiveProps(nextProps, nextState) {
-    console.log("WillReceiveProps");
-    console.log("nextProps sort_by", nextProps.sort_by);
-    console.log("prevProps sort_by", this.props.sort_by);
-  }
+  // componentWillReceiveProps(nextProps, nextState) {
+  //   console.log("WillReceiveProps");
+  //   console.log("nextProps sort_by", nextProps.sort_by);
+  //   console.log("prevProps sort_by", this.props.sort_by);
+  // }
 
   shouldComponentUpdate(nextProps, nextState) {
     if (nextProps.sort_by !== this.props.sort_by) {

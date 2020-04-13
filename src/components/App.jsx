@@ -18,7 +18,7 @@ class App extends React.Component {
       moviesWillWatch: [],
       sort_by: "popularity.desc",
       page: 1,
-      total_pages: [],
+      total_pages: 0,
     };
 
     console.log("constructor");
@@ -52,6 +52,8 @@ class App extends React.Component {
         console.log("data", data);
         this.setState({
           movies: data.results,
+          page: data.page,
+          total_pages: data.total_pages,
         });
       });
   };
@@ -93,6 +95,7 @@ class App extends React.Component {
       sort_by: value,
     });
   };
+
   render() {
     console.log("render", this.state.sort_by);
     return (
@@ -101,7 +104,10 @@ class App extends React.Component {
           <div className="col-9">
             <div className="row mb-4">
               <div className="mb-4">
-                <MoviePages />
+                <MoviePages
+                  page={this.state.page}
+                  total_pages={this.state.total_pages}
+                />
               </div>
               <div className="col-12">
                 <MovieTabs
