@@ -101,21 +101,19 @@ class App extends React.Component {
     return (
       <div className="container">
         <div className="row mt-4">
-          <div className="col-9">
-            <div className="row mb-4">
-              <div className="mb-4">
+          <div className="col-lg-9">
+            <div className="mb-4">
                 <MoviePages
                   page={this.state.page}
                   total_pages={this.state.total_pages}
                 />
-              </div>
-              <div className="col-12">
+                          </div>
+            <div className="mb-4">
                 <MovieTabs
                   sort_by={this.state.sort_by}
                   updateSortBy={this.updateSortBy}
                 />
               </div>
-            </div>
             <div className="row">
               {this.state.movies.map((movie) => {
                 return (
