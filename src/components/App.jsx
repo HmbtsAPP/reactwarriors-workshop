@@ -3,6 +3,7 @@ import React from "react";
 import MovieItem from "./MovieItem";
 import { API_URL, API_KEY_3 } from "../utils/api";
 import MovieTabs from "./MovieTabs";
+import MoviePages from "./MoviePages";
 
 // UI = fn(state, props)
 
@@ -16,6 +17,8 @@ class App extends React.Component {
       movies: [],
       moviesWillWatch: [],
       sort_by: "popularity.desc",
+      page: 1,
+      total_pages: [],
     };
 
     console.log("constructor");
@@ -97,6 +100,9 @@ class App extends React.Component {
         <div className="row mt-4">
           <div className="col-9">
             <div className="row mb-4">
+              <div className="mb-4">
+                <MoviePages />
+              </div>
               <div className="col-12">
                 <MovieTabs
                   sort_by={this.state.sort_by}
