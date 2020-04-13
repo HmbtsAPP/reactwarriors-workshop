@@ -96,6 +96,12 @@ class App extends React.Component {
     });
   };
 
+  updatePage = (value) => {
+    this.setState({
+      page: value,
+    });
+  };
+
   render() {
     console.log("render", this.state.sort_by);
     return (
@@ -103,17 +109,18 @@ class App extends React.Component {
         <div className="row mt-4">
           <div className="col-lg-9">
             <div className="mb-4">
-                <MoviePages
-                  page={this.state.page}
-                  total_pages={this.state.total_pages}
-                />
-                          </div>
+              <MoviePages
+                page={this.state.page}
+                total_pages={this.state.total_pages}
+                updatePage={this.updatePage}
+              />
+            </div>
             <div className="mb-4">
-                <MovieTabs
-                  sort_by={this.state.sort_by}
-                  updateSortBy={this.updateSortBy}
-                />
-              </div>
+              <MovieTabs
+                sort_by={this.state.sort_by}
+                updateSortBy={this.updateSortBy}
+              />
+            </div>
             <div className="row">
               {this.state.movies.map((movie) => {
                 return (
