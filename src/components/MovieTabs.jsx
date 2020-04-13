@@ -8,7 +8,11 @@ class MovieTabs extends React.Component {
   }
 
   shouldComponentUpdate(nextProps, nextState) {
+    if (nextProps.sort_by !== this.props.sort_by) {
+      return true
+    } else {
     return false;
+    }
   }
 
   render() {
